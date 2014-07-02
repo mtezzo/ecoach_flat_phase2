@@ -1,0 +1,177 @@
+{% load settings_to_template %}
+{% load url from future %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% include "base_head.html" %}
+        {% block head_extra %}
+        {% endblock %}
+
+        <script type="text/javascript">
+            {% include "paths.js.html" %}
+
+            jQuery(document).ready(function($) {
+                navigation.initResponsiveNavs();
+                navigation.initNavBehaviors();
+                logger.logEvent(true);
+            });
+            navigation = {
+                initResponsiveNavs: function() {
+                    jQuery(window).on("resize load", function () {
+                        if (jQuery(window).width() < 768) {
+                            jQuery(".side-list-items").addClass("collapse");
+                            jQuery("#side-col li.nav-header").show();
+                            jQuery("#side-col h3").hide();
+                        } 
+                        else {
+                            jQuery(".side-list-items").removeClass("collapse");
+                            jQuery("#side-col h3").show();
+                        }
+                        if (jQuery(window).width() <= 979) {
+                            jQuery(".nav-dropdown ul").addClass("dropdown-menu");
+                        } 
+                        else {
+                            jQuery(".nav-dropdown ul").removeClass("dropdown-menu");
+                        }
+                    });
+                },
+                initNavBehaviors: function() {
+                    jQuery(".nav-header").click(function() {
+                        jQuery(".icon-chevron-up, .icon-chevron-down", this).toggle();
+                    });  
+
+                    jQuery(".dropdown-menu a").click(function(event){
+                        event.stopPropagation();
+                    });
+                }
+            };
+
+        </script>
+    </head>
+
+  <body class="blue-theme {% block secondary_menu_class %}{% endblock %}">
+      <div id="wrap">
+      <div id="main">
+      <div class="masthead">   
+          <div class="container clearfix">
+            <div class="wrapper">
+            <a href="/">
+              <div class="logo">
+              </div>
+            </a>
+            {% block course_name %}
+                <span class="course-name">
+                    {% settings_value "COACH_NAME" %}
+                </span> 
+            {% endblock %}
+
+            <!-- First Menu  -->
+            {% block first_menu %}
+                  <div class="menu1_options clearfix">
+                    <!-- use responsive nav when on narrower devices -->
+                    <div class="nav-dropdown"> 
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle btn-bars" data-toggle="dropdown">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                            {% for nn in main_nav %}
+                              {% if nn.6|length > 0 %}
+                                <li class='menu1_option dropdown sub-dropdown'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}" data-toggle="dropdown">
+                                      <b class="caret"></b>
+                                      {{nn.0}}
+                                    </a>     
+                                    <ul class="dropdown-menu">
+                                      {% for ss in nn.6 %}
+                                          <li>
+                                            <a href='{{ss.2}}' class="{{ss.1}}">{{ss.0}}</a>
+                                          </li>                                    
+                                      {% endfor %}
+                                    </ul>
+                                </li>
+                              {% else %}
+                                <li class='menu1_option'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">
+                                      {{nn.0}}
+                                    </a>
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- static nav for standard desktop browser widths -->
+                    <div class="nav-static nav-static-wide"> 
+                        <ul>
+                            {% for nn in main_nav %}
+                              {% comment %}{% if nn.6|length > 0 %}{% endcomment %}
+                              {% if false %}
+                                <li class='menu1_option dropdown'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}" data-toggle="dropdown">
+                                      {{nn.0}}
+                                      <b class="caret"></b>
+                                    </a>                         
+                                    <ul class="dropdown-menu">
+                                    {% for ss in nn.6 %}
+                                        <li>
+                                          <a href='{{ss.2}}' class="{{ss.1}}">{{ss.0}}</a>
+                                        </li>                                    
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+                                {% else %}
+                                <li class='menu1_option'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">
+                                      {{nn.0}}
+                                    </a>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                       </ul>
+                    </div>
+                   
+            </div>
+            {% endblock %}
+            <!-- First Menu  -->
+           </div>       
+         </div>
+      </div>
+      {% block secondary_menu %}
+      {% endblock %}
+      <div class="main">
+        <div class="container">
+          {% block steps_navigation %}
+          {% endblock %}
+          <div id="main-row" class="row">
+            {% block side %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+      <footer class="footer">
+        <div class="tagline">
+        E<sup>2</sup>Coach is here to help you through your course - using expert advice, advice from your friends, and stats from your class, it tailors to <i>you</i>.
+        </div>
+        <div class="links">
+            <a href="{% url 'myselector:about' %}">About</a><span class="muted">&nbsp&nbsp·&nbsp</span>
+            <a href="{% url 'myselector:team' %}">Team</a><span class="muted">&nbsp&nbsp·&nbsp</span>
+            <a href="{% url 'myselector:press' %}">Press</a>
+        </div>
+        <a href="http://www.umich.edu" target="_blank"><img class="img-polaroid" src="{{ STATIC_URL }}img/um-logo.png"/></a>
+      </footer>
+
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+     
+  </body>
+</html>

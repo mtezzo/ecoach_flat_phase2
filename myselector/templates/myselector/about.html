@@ -1,0 +1,41 @@
+{% extends 'info_page.html' %}
+
+{% load url from future %}
+
+{% block content %}
+<div class="span9">
+	<h2>What is E<sup>2</sup>Coach?</h2>
+	<p>The Michigan Tailoring System is currently being used for a variety of applications in public health—everything from cessation of smoking to losing weight.  We are working to adapt MTS with the goal of helping physics students improve their performance in introductory courses. We call this “E<sup>2</sup>Coach”, E<sup>2</sup> for electronic and expert. E<sup>2</sup>Coach provides each student with an individualized coach, one that will recognize their strengths and weaknesses, understand their motivations, and help them succeed in the course.</p>
+
+	<h2>How does E<sup>2</sup>Coach work?</h2>
+
+	<img img src="{{ STATIC_URL }}myselector/images/how_it_works_diagram.png"/>
+
+
+	<p>E<sup>2</sup>Coach is built on MTS; a mature open-source software system built to enable tailored communication.</p>
+
+	<p>To use MTS, we must first decide what we want to say to each student, and how we want to tailor that advice. We must capture the collective expertise of students, instructors, and behavior change experts.</p>
+	<p>When we combine this knowledge with detailed information about students, including their current status in courses, MTS enables us to delivering individually personalized content to every student – to say to each what we would say if we could sit down with them for a personal chat.</p>
+	<p>Because MTS is quite mature, the challenges in implementation all lie in understanding what you’d like to say and in finding out about the students. What’s great is that once you know this, MTS makes delivering very complex content relatively simple.</p>
+
+
+
+	<p>E<sup>2</sup>Coach is unique in that it aims to help all students—the student at risk of failure as well as an A student.  Its sole purpose is to be on the students’ side, providing useful tools tailored to their individual needs.</p>
+
+	<h2>What does E<sup>2</sup>Coach know?</h2>
+	<p>E<sup>2</sup>Coach draws data from many different sources.  Primarily, we survey the students at the beginning of the course to find out important academic information, goals for this course, and psycho-social factors. Additionally, real-time data is fed into E<sup>2</sup>Coach as the semester progresses. This includes exam scores, Mastering Physics scores, i>clicker scores, and perhaps CTools usage information and SLC enrollment data.</p>
+
+	<h2>Who’s working on this?</h2>
+	<p>This project is led by Tim McKay and funded by <a href="http://www.educause.edu/focus-areas-and-initiatives/teaching-and-learning/next-generation-learning-challenges">EDUCAUSE Next Generation Learning Challenge</a> (Bill &amp; Melinda Gates Foundation). It is supported by the <a href="www.lsa.umich.edu/physics/">Physics Department</a>, <a href="chcr.umich.edu/">Center for Health Research Communications (CHCR)</a>, <a href="http://www.crlt.umich.edu/index.php">Center for Research on Learning and Teaching (CRLT)</a>, and several other resources on UM’s campus such as the <a href="www.lsa.umich.edu/slc/
+	">Science Learning Center (SLC)</a> and <a href="www.wise.umich.edu/">WISE (Women in Science and Engineering)</a>.</p>
+
+	<h6>Many thanks to: </h6>
+	<div class="attribution muted">
+	    <a href="http://thenounproject.com/noun/light-bulb/#icon-No11504" target="_blank">Light Bulb</a> designed by <a href="http://thenounproject.com/jeremy.j.bristol" target="_blank">Jeremy J Bristol</a> from The Noun Project<br/>
+	    <a href="http://thenounproject.com/noun/graduation-cap/#icon-No5927" target="_blank">Graduation Cap</a> designed by <a href="http://thenounproject.com/Nozzman" target="_blank">Bram van Rijen</a> from The Noun Project<br/>
+	    <a href="http://thenounproject.com/noun/check-box/#icon-No876" target="_blank">Check Box</a> designed by <a href="http://thenounproject.com/Hrag" target="_blank">Hrag Chanchanian</a> from The Noun Project</br>
+	    <a href="http://thenounproject.com/noun/question/#icon-No8063" target="_blank">Question</a> designed by <a href="http://thenounproject.com/JuanGarces" target="_blank">Juan Garces</a> from The Noun Project</br>
+	</div>
+</div>
+
+{% endblock %}

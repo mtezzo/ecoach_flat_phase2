@@ -1,0 +1,19 @@
+{% extends 'info_page.html' %}
+
+{% load url from future %}
+
+{% block content %}
+
+<div class="span9">
+	<h2>Who is behind E<sup>2</sup>Coach, and what is our goal?</h2>
+	<p>The E<sup>2</sup>Coach project brings together education experts from the UM Department of Physics with digital health coaching experts from the UM Center for Health Communication Research. None of us are teaching the classes you’re taking, we won’t be writing your tests or giving you a grade – we’re completely on your side. If you succeed, so do we. If you fail, we fail with you.</p>
+	<center><img src="{{STATIC_URL}}myselector/images/ECoach_Team.png"></center>
+	
+	<p>In this sense, we’re just like more familiar coaches at Michigan, people like Carol Hutchins and Brady Hoke. We’re going to do everything we can to help you get ready for the game, but the test will come from the other team: your course instructors.</p>
+	<center><img src="{{STATIC_URL}}myselector/images/Coaches.png"></center>
+	
+	<p>So our goal is simple: we want every single student in every intro physics course at Michigan to do better-than-expected, especially you. How will we know? We’re going to compare how you and your class do to 15 years of history, detailed information about the progress of more than 45,000 students through our intro physics courses. From this past experience, we know how well we expect students to do before they even start. We’ll be able to tell whether E<sup>2</sup>Coach helps you to do better-than-expected.</p>
+
+</div>
+
+{% endblock %}

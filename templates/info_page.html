@@ -1,0 +1,14 @@
+{% extends 'new_base.html' %}
+
+{% load url from future %}
+
+{% block side %}
+<div class="span3">
+    <ul class="nav nav-tabs nav-stacked">
+        <li><a href="{% url 'myselector:about' %}" class="">About<span class="icon-chevron-right pull-right"></span></a></li>
+        <li><a href="{% url 'myselector:team' %}" class="">Team<span class="icon-chevron-right pull-right"></span></a></li>
+        <li><a href="{% url 'myselector:press' %}" class="">Press<span class="icon-chevron-right pull-right"></span></a></li>     
+    </ul>
+</div>
+{% endblock %}
+

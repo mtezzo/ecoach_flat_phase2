@@ -1,0 +1,25 @@
+{% extends 'myexporter/base_exporter.html' %}
+
+{% block status_report %}
+Database Table: {{active_download_table}}
+{% endblock %}
+
+
+{% block left_side %}
+    <table>
+        <tr>
+            <td>
+                Database Table:
+            </td>
+            <td>
+                {{ form.db_table }}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+
+
+{% block right_side %}
+
+{% endblock %}
+

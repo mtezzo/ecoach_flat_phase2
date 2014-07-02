@@ -1,0 +1,63 @@
+.message-debug-table td {
+    font-size: 11px;
+    font-family: verdana, helvetica, arial, sans-serif;
+    border-bottom: 1px dotted #ccc;
+    border-left: 1px dotted #ccc;
+    padding: 7px 5px 7px 5px;
+}
+
+.message-debug-table th {
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 2px solid #888;
+}
+
+.messagerow.section {
+    background-color: #FFE0AE;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.messagerow.comment {
+    background-color: #cfc;
+}
+
+.messagerow.comment td:nth-child(5) {
+    font-style: italic;
+}
+
+.messagerow.block td:nth-child(2),
+.messagerow.list td:nth-child(2),
+.messagerow.select td:nth-child(2) {
+    color: #930;
+    font-weight: bold;
+}
+
+.messagerow.notvisible {
+    text-decoration: line-through;
+    color: #CCF;
+}
+
+.messagerow.notselected {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.messagerow.limited {
+    font-style: italic;
+    /* color: #9c9; */
+}
+
+.bv-link {
+    font-size: 9pt;
+    vertical-align: super;
+}
+
+
+.messagerow.heading td:nth-child(5) {
+    font-weight: bold;
+}
+
+.depthdots {
+    opacity: 0.5;
+}

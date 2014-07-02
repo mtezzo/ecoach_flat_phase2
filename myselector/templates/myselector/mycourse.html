@@ -1,0 +1,308 @@
+{% extends 'new_base.html' %}
+
+
+{% block head_extra %}
+<script type="text/javascript"> 
+    jQuery(document).ready(function() {
+        jQuery(".btn-show").click(function() {
+            jQuery(this).hide();
+            jQuery(".btn-hide").show();
+        });
+        jQuery(".btn-hide").click(function() {
+            jQuery(this).hide();
+            jQuery(".btn-show").show();
+        })
+    });
+</script>
+
+{% endblock %}
+
+{% block title %}My Courses - {% endblock %}
+
+{% block content %}
+<div id="content-col" class="span9 courses-content">
+<h2>Explore our coached courses!</h2>
+
+<!-- Course table -->
+<table id="current-courses-table" class="table table-hover table-clickable-row courses-table">
+    <tbody>
+
+    </tbody>
+</table>
+<!-- Course table -->
+
+<!-- Archive table -->
+<div id="archived-table-container" class="in collapse">
+<table id="archived-table" class="table table-hover table-clickable-row courses-table">
+    <tbody>
+    <tr>
+        <td class="thumb">
+            <a href="/coach19/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/normal.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach19/">
+                <nobr>Winter 2014</nobr><br/>
+                <nobr>Stats 250</nobr><br/>    
+                <span class="label label-success">ACTIVE</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach19/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach18/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/chem.jpeg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach18/">
+                <nobr>Winter 2014</nobr><br/>
+                <nobr>Chemistry 130</nobr><br/>    
+                <span class="label label-success">ACTIVE</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach18/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach17/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physicsF13.jpg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach17/">
+                <nobr>Winter 2014</nobr><br/>
+                <nobr>Physics 140, 240, 135, 235</nobr><br/>    
+                <span class="label label-success">ACTIVE</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach17/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach16/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/mcdb.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach16/">
+                <nobr>Winter 2014</nobr><br/>
+                <nobr>MCDB 310</nobr><br/>    
+                <span class="label label-success">ACTIVE</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach16/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach14/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/maxwell.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach14/">
+                <nobr>Winter 2014</nobr><br/>
+                <nobr>Tournaments - Physics 405</nobr><br/>    
+                <span class="label label-success">ACTIVE</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach14/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach9/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/stats.jpeg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach9/">
+                <nobr>Fall 2013</nobr><br/>
+                <nobr>Stats 250</nobr><br/>    
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach9/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach8/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/chem.jpeg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach8/">
+                <nobr>Fall 2013</nobr><br/>
+                <nobr>Chemistry 130</nobr><br/>    
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach8/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach7/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physicsF13.jpg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach7/">
+                <nobr>Fall 2013</nobr><br/>
+                <nobr>Physics 140, 240, 135, 235</nobr><br/>    
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach7/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/coach6/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/mcdb.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/coach6/">
+                <nobr>Fall 2013</nobr><br/>
+                <nobr>MCDB 310</nobr><br/>    
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button"> 
+            <a href="/coach6/">
+                <button class="btn btn-large">Enter Coach</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/w13physics/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physics4-crop.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/w13physics/">
+                <nobr>Winter Term 2013</nobr><br/>
+                <nobr>Physics 135, 235, 140, 240</nobr><br/>    
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button">
+            <a href="/w13physics/">
+                <button class="btn btn-large">Enter Archive</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/f12physics/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physics2-crop.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/f12physics/">
+                <nobr>Fall Term 2012</nobr><br/>
+                <nobr>Physics 135, 235, 140, 240</nobr><br/>
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button">
+            <a href="/f12physics/">
+                <button class="btn btn-large">Enter Archive</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/s12physics/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physics1-crop.jpg"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/s12physics/">
+                <nobr>Spring Term 2012</nobr><br/>
+                <nobr>Physics 135, 235, 140, 240</nobr><br/>
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button">
+            <a href="/s12physics/">
+                <button class="btn btn-large">Enter Archive</button>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="thumb">
+            <a href="/w12physics/">
+                <img class="thumbnail" src="{{ STATIC_URL }}myselector/images/physics3-crop.png"/>
+            </a>
+        </td>
+        <td class="course-text">
+            <a href="/w12physics/">
+                <nobr>Winter Term 2012</nobr><br/>
+                <nobr>Physics 135, 235, 140, 240</nobr><br/>
+                <span class="label label-warning">RETIRED</span>
+            </a>
+        </td>
+        <td class="button">
+            <a href="/w12physics/">
+                <button class="btn btn-large">Enter Archive</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div id="archived-button-container">
+    <button class="btn btn-hide btn-link" data-target="#archived-table-container" data-toggle="collapse">
+    View Archived Coaches&hellip;</button>
+    <button class="btn btn-show btn-link" data-target="#archived-table-container" data-toggle="collapse">
+    Hide Archived Coaches&hellip;</button>
+</div>
+<!-- Archive table -->
+</div>
+
+<div id="courses-info" class="span3">
+    <div class="well">
+        <h5><i>E2Coach helps you succeed in your courses by providing:</i></h5>
+        <ul>
+            <li>Expert advice</li>
+            <li>Advice from students like you</li>
+            <li>Stats from your class </li>
+            <li>Providing new opportunities in blended learning</li>
+        </ul>
+    </div>
+{% endblock %}

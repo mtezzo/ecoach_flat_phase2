@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+<style type="text/css" media="screen">
+        {% include "djangotailoring/message-debug.css" %}
+    </style> 
+</head>
+<body>
+<div class="message-debug-table">
+	<h2>
+		{{ title }}
+	</h2>
+	<table border="0">
+		<tr>
+			<th width="5%">#</th>
+			<th width="8%">command</th>
+			<th width="7%">name</th>
+			<th width="15%">logic</th>
+			<th width="40%">message</th>
+			<th width="15%">note</th>
+			<th width="5%">flags</th>
+			<th width="5%">id</th>
+		</tr>
+		{% for row in rows %} 
+		<tr class="messagerow {{row.cssclass}}" id="id-{{row.msgid}}">
+			<td>{{forloop.counter}}</td>
+			<td>{{row.command}}</td>
+			<td>{{row.name}}</td>
+			<td>{{row.logic}}</td>
+			<td>{{row.message}}</td>
+			<td>{{row.note}}</td>
+			<td>{{row.flags}}</td>
+			<td>{{row.msgid}}</td>
+		</tr>
+		{% endfor %} 
+	</table>
+</div>
+</body>
+</html>

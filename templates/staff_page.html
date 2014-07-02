@@ -1,0 +1,45 @@
+{% extends 'new_base.html' %}
+
+{% block title %}Staff Pages - {% endblock %}
+
+{% block head_extra %}
+{% endblock %}
+
+{% block side %}
+{% endblock %}
+
+{% block secondary_menu_class %}secondary-menu-enabled{% endblock %}
+{% block secondary_menu %}
+<div class="masthead secondary">
+    <div class="container">
+      <div class="wrapper navbar">
+        <ul class="nav">
+            {% for nn in tasks_nav %}
+                <li>
+                    <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block steps_navigation %}
+    <div class="nav-static-steps">
+        <div class="btn-group btn-group-steps">
+       	{% autoescape off %}
+            {% if steps_nav|length > 1 %}
+                {% for nn in steps_nav %}
+                    <a href="{{nn.2}}" class="btn {{nn.1}}">{{nn.0}}</a>
+                {% endfor %}
+            {% endif %}
+        {% endautoescape %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    Please subclass this base staff page template to add content.
+{% endblock %}
+

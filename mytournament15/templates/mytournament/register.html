@@ -1,0 +1,72 @@
+{% extends 'mytournament/base_tournament.html' %}
+
+{% block bottom %}
+
+    <script type="text/javascript">
+        var brot;
+        var grot;
+        var boy; 
+        var bcss;
+        var girl; 
+        var gcss;
+        jQuery(document).ready(function($) {
+            brot = 90;
+            grot = 90;
+            boy = jQuery('#rotating-boy');
+            girl = jQuery('#rotating-girl');
+            inc();
+        });
+        function inc()
+        {
+            brot += 20;
+            grot -= 20;
+            setTimeout(inc, 200); 
+            bcss = "transform:rotate("+brot+"deg); -ms-transform:rotate("+brot+"deg); -webkit-transform:rotate("+brot+"deg);"
+            gcss = "transform:rotate("+grot+"deg); -ms-transform:rotate("+grot+"deg); -webkit-transform:rotate("+grot+"deg);"
+            boy.attr('style', bcss);
+            girl.attr('style', gcss);
+        }
+    </script>
+
+{% if bracket.status = 'Open' %} 
+    You have to bring game to the tournament...
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>
+                <div id='rotating-boy' style="">
+                >-|:)
+                </div>
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <div id='rotating-girl' style="">
+                >-|:}
+                </div>
+            </td>
+            <td>
+                You can register your game here! 
+            </td>
+        </tr>
+    </table>
+    <br>
+    <form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Submit Game' onclick="logger.page_dynamics('register_page', 'submit');"></input>
+    </form>
+{% else %}
+    Registration is no longer open...
+    <br>
+    <br>
+{% endif %}
+
+    Your upload : <a href='{{competitor.Game_Url}}' onclick="logger.page_dynamics('registration_pdf', '{{competitor.game}}');" target="_blank">{{competitor.game}}</a>
+
+
+{% endblock %}
+
+
+

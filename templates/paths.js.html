@@ -1,0 +1,16 @@
+{% load settings_to_template %}
+
+var CONF = {
+    server: '{% settings_value "HOST" %}',   
+    domain : '',
+    coach: '{% settings_value "COACH_URL" %}',   
+    logger_url: '{% url 'mylogger:what_log' %}',
+    hello : function ()
+    {
+        alert('{% settings_value "DPROJ_NAME" %}');
+    },
+    production: function()
+    {
+        return (this.server == 'PRODUCTION')
+    } 
+};

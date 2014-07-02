@@ -1,0 +1,31 @@
+{% load url from future %}
+
+<!DOCTYPE html>
+<html lang="en" class="minimal">
+    <head>
+
+        {% include "base_head.html" %}
+
+        {% block head_extra %}
+        {% endblock %}
+
+        <script type="text/javascript">
+            {% include "paths.js.html" %}
+
+            jQuery(document).ready(function($) {
+                logger.logEvent(true);
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        {% block content %}
+        {% endblock %}
+
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>   
+
+    </body>
+</html>
