@@ -1,7 +1,7 @@
 import os, sys
 
 import site
-site.addsitedir('/usr/local/ecoach_webapps/env/v1/lib/python2.6/site-packages')
+site.addsitedir('/var/www/ecoach_webapps/env/v1/lib/python2.6/site-packages')
 
 from os.path import abspath, dirname, join
 SETTINGS_PATH = abspath(dirname(__file__))
