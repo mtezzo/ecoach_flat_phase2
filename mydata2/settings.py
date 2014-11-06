@@ -3,30 +3,30 @@ host = socket.gethostname()
 
 if host == "analytics.itservices.msu.edu":
     HOST = "DEVELOPMENT"
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 elif host == "ecoach.itservices.msu.edu":
     HOST = "PRODUCTION"
 else:
     HOST = "LOCAL"
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 
 # Django settings for ecoach project.
 import django.template
 django.template.add_to_builtins('django.templatetags.future')
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
 # globals
-DB_NAME     = 'ecoach2'
-DPROJ_NAME  = 'mydata2'
-MPROJ_NAME  = 'mts/mts2'
-COACH_NAME = 'Coach Selector'
+DB_NAME    = 'ecoach2'
+DPROJ_NAME = 'mydata2'
+MPROJ_NAME = 'mts/mts2'
+COACH_NAME = 'Sample eCoach Course'
 COACH_URL = 'coach2'
-COACH_EMAIL = 'ecoach-help@msu.edu'
+COACH_EMAIL = 'ezzomich@msu.edu'
 
 from os.path import abspath, dirname, join
 SETTINGS_PATH = abspath(dirname(__file__))
 DIR_PROJ = abspath(join(SETTINGS_PATH, '../')) + '/'
-DIR_NTS = DIR_PROJ + DPROJ_NAME + '/' + MPROJ_NAME + "/Static/mts/js/nts/"
 DIR_UPLOAD_DATA = DIR_PROJ + DPROJ_NAME + "/uploads/"
 DIR_DOWNLOAD_DATA = DIR_PROJ + DPROJ_NAME + "/downloads/"
 DIR_MYDATA = DIR_PROJ + DPROJ_NAME + '/'
@@ -37,7 +37,7 @@ URL_SUB = MPROJ_NAME + '/'
 
 MYDATA = 'mydata2'
 
-DATABASE_ROUTERS = ['mytailoring.routers.CommonRouter']
+DATABASE_ROUTERS = ['mytailoring.routers.UserRouter', 'mytailoring.routers.CommonRouter']
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -117,7 +117,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    DIR_PROJ +  MPROJ_NAME + '/Static',
+    DIR_PROJ + MPROJ_NAME + '/Static',
     DIR_PROJ + 'static',
 )
 
@@ -157,7 +157,7 @@ else:
         'django.contrib.messages.middleware.MessageMiddleware',
     )
 
-ROOT_URLCONF = 'myselector.root_urls'
+ROOT_URLCONF = DPROJ_NAME + '.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -181,7 +181,6 @@ INSTALLED_APPS = (
     'mypublisher',
     'myusage',
     'myemailer',
-    'nts',
     'myloader',
     'myexporter',
     'mylogger',

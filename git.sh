@@ -13,17 +13,8 @@ myexporter
 myemailer
 myusage
 mylogger
-mytournament15
-mytournament13
 nts
-mydata6
-mydata7
-mydata8
-mydata9
-mydata16
-mydata17
-mydata18
-mydata19
+mydata2
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)

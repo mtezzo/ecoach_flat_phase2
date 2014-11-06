@@ -1,8 +1,15 @@
 *.swp
 *.pyc
+/.idea
+/.project
+/.buildpath
+.svn
+*~
+.DS_Store
+.secret
 
-mts/
+/mts/
 
 staticroot/
 
-
+/env/

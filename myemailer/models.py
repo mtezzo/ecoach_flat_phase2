@@ -51,7 +51,7 @@ class BCC_Query(models.Model):
                 tup = list(zip(*res)[0])
                 arr = []
                 for i in tup:
-                    arr.append(str(i + '@umich.edu'))
+                    arr.append(str(i + '@msu.edu'))
                 ret = arr
             else:
                 ret = []
@@ -105,11 +105,11 @@ class Message(models.Model):
 
     def send(self, username, action):
         # message settings
-        if username == 'jtritz' or username == 'michelot' or username == 'jbrancho' or username == 'gshultz':
+        if username == 'ezzomich' or username == 'jms':
             #sentfrom = 'ecoach-help@umich.edu'
             sentfrom = settings.COACH_EMAIL
             #sendto = ['jtritz@umich.edu']
-            sendto = [username+'@umich.edu']
+            sendto = [username+'@msu.edu']
             bcc = self.bcc_query.get_bcc()
             subject = self.subject 
             bodytext = 'html message'

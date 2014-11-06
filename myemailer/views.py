@@ -29,7 +29,7 @@ def bcc_view(request):
         if form.is_valid():
             # process the form :)
             f_select_bcc = form.cleaned_data['select_bcc']
-            if request.user.username == 'jtritz':
+            if request.user.username == 'ezzomich':
                 f_sql = form.cleaned_data['sql']
             else:
                 f_sql = emailer.bcc_query.sql
