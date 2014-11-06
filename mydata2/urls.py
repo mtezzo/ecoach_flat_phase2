@@ -19,7 +19,7 @@ mts_patterns = patterns('',
     url(r'^emailer/',       include('myemailer.urls', namespace='myemailer')),
     url(r'^usage/',         include('myusage.urls', namespace='myusage')),
     url(r'^logger/',        include('mylogger.urls', namespace='mylogger')),
-    url(r'^tournament/',    include('mytournament.urls', namespace='tourney')),
+    #url(r'^tournament/',    include('mytournament.urls', namespace='tourney')),
 
     # message project
     url(r'^',               include('mytailoring.urls', namespace='mytailoring')),
