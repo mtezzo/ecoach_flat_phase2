@@ -6,7 +6,7 @@ echo "-------running collectstatic------"
 
 source /var/www/ecoach_webapps/env/v1/bin/activate
 
-python $SCRIPT_DIR/manage.py collectstatic --noinput --settings=mydata2.settings
+python $SCRIPT_DIR/manage.py collectstatic --noinput --settings=mydata22.settings
 
 
 echo 'done'

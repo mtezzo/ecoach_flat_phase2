@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from .models import Source1
-from .models import Common1
+#from .models import Common1
 
 def configure_source_data(username):
     # THIS IS A HACK TO ENSURE ALL THE ENTRY POINTS ADD THE RIGHT SOURCE ROW FOR A USER
@@ -20,14 +20,14 @@ def configure_source_data(username):
         ss = Source1(user_id=me)
         ss.save()
         ret = True
-    
+    """ 
     ss = Common1.objects.filter(user_id=me)
     if len(ss) < 1:
         # After the enrollment period add a copy of Albert Einstein's data to non-enrolled users 
         ss = Common1(user_id=me)
         ss.save()
         ret = True
-
+    """ 
     return ret
         
  

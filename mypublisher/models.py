@@ -4,7 +4,7 @@ from django.utils.importlib import import_module
 from django.conf import settings
 mydata = import_module(settings.MYDATA)
 Source1 = mydata.models.Source1
-Common1 = mydata.models.Common1
+#Common1 = mydata.models.Common1
 
 # Create your models here.
 

@@ -15,7 +15,7 @@ from .forms import *
 from django.utils.importlib import import_module
 mydata = import_module(settings.MYDATA)
 Source1 = mydata.models.Source1
-Common1 = mydata.models.Common1
+#Common1 = mydata.models.Common1
 
 # Create your views here.
 
@@ -67,6 +67,7 @@ def copycat_view(request):
             if form.cleaned_data["copy_who"] != 'no-one':
                 # attempt to copy the student data
                 copied = str(request.POST.get("copy_who"))
+                """
                 try:
                     # Common
                     me = Common1.objects.filter(user_id=request.user.username)[0]
@@ -77,6 +78,7 @@ def copycat_view(request):
                     copy_error = "Common sucess, "
                 except:
                     copy_error = "<font color='red'>Common error</font>, "
+                """
                 try:
                     # Source1
                     me = Source1.objects.filter(user_id=request.user.username)[0]

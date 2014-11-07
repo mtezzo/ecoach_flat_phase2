@@ -14,7 +14,7 @@ myemailer
 myusage
 mylogger
 nts
-mydata2
+mydata22
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)

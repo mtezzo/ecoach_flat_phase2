@@ -123,10 +123,11 @@ def download_trigger_view(request):
             cursor = connections[db].cursor()
             col_str = '`, `'.join([str(x) for x in cols]) 
             students = Source1.objects.all().order_by('id').values_list('user_id')
-            if str(download.table) == 'Common1':
-                where_str = " where user_id='" + "' or user_id='".join([str(x[0]) for x in students]) + "'"
-            else:
-                where_str = ""
+            #if str(download.table) == 'Common1':
+            #    where_str = " where user_id='" + "' or user_id='".join([str(x[0]) for x in students]) + "'"
+            #else:
+            #    where_str = ""
+            where_str = ""
             query = "select `" + col_str + "` from " + eval(download.table)._meta.db_table + where_str
             res = cursor.execute(query)
             done = cursor.fetchall() 

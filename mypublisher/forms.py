@@ -18,8 +18,8 @@ class Copycat_Form(forms.Form):
 
     def table_choices(self):
         available = [
-            ('Source1', 'Source1'),
-            ('Common1', 'Common1')
+            ('Source1', 'Source1')
+            #('Common1', 'Common1')
         ]
         return available
 

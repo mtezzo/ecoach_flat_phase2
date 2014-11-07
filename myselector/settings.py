@@ -16,11 +16,11 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # globals
-DB_NAME     = 'ecoach2'
-DPROJ_NAME  = 'mydata2'
-MPROJ_NAME  = 'mts/mts2'
+DB_NAME     = 'ecoach22'
+DPROJ_NAME  = 'mydata22'
+MPROJ_NAME  = 'mts/mts22'
 COACH_NAME = 'Coach Selector'
-COACH_URL = 'coach2'
+COACH_URL = 'coach22'
 COACH_EMAIL = 'ecoach-help@msu.edu'
 
 from os.path import abspath, dirname, join
@@ -35,7 +35,7 @@ DOMAIN = 'localhost'
 DOMAIN_COACH = '/' + COACH_URL + '/'
 URL_SUB = MPROJ_NAME + '/'
 
-MYDATA = 'mydata2'
+MYDATA = 'mydata22'
 
 DATABASE_ROUTERS = ['mytailoring.routers.CommonRouter']
 

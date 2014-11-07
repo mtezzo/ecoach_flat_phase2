@@ -6,7 +6,7 @@ from mylogger.models import ELog
 from myemailer.models import Message
 mydata = import_module(settings.MYDATA)
 Source1 = mydata.models.Source1
-Common1 = mydata.models.Common1
+#Common1 = mydata.models.Common1
 
 # Create your models here.
 

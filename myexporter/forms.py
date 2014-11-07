@@ -17,8 +17,8 @@ class Select_Table_Form(forms.Form):
         available = [
             ('Message', 'Message'),
             ('ELog', 'ELog'),
-            ('Source1', 'Source1'),
-            ('Common1', 'Common1')
+            ('Source1', 'Source1')
+            #('Common1', 'Common1')
         ]
         return available
 
