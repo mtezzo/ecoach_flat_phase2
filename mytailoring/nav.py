@@ -36,7 +36,7 @@ def inbox_nav(user, selected):
     return inbox_nav
 
 def all_messages_nav(user, selected):
-    all_messages = allfiles() 
+    all_messages = allfiles()
     inbox_nav = [] 
     for nn in all_messages:
         # style the selected option
@@ -47,7 +47,7 @@ def all_messages_nav(user, selected):
             inbox_nav.append(nn)
         elif nn[3] == 'staff' and user.is_staff:
             inbox_nav.append(nn)
-    inbox_nav = sorted(inbox_nav, key=lambda student: inbox_nav[4]) 
+    inbox_nav = sorted(inbox_nav, key=lambda student: student[4])
     return inbox_nav
 
 def allfiles():

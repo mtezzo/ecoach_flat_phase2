@@ -26,7 +26,7 @@ mts_patterns = patterns('',
 )
 
 urlpatterns = patterns('',
-    url(r'^coach22/',          include(mts_patterns)),
+    url(r'^coachdemo/',          include(mts_patterns)),
     url(r'^coaches/',       include('myselector.urls', namespace='myselector')),
     url(r'^',               redirect_to, {'url': '/coaches/'})
 )

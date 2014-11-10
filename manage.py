@@ -29,7 +29,7 @@ if __name__ == "__main__":
 import os, sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mydata2.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mydatademo.settings")
     from django.core.management import execute_from_command_line
     execute_from_command_line(sys.argv)
 

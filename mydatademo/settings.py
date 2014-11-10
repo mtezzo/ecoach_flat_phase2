@@ -17,11 +17,11 @@ import django.template
 django.template.add_to_builtins('django.templatetags.future')
 
 # globals
-DB_NAME    = 'ecoach22'
-DPROJ_NAME = 'mydata22'
-MPROJ_NAME = 'mts/mts22'
+DB_NAME    = 'ecoach0'
+DPROJ_NAME = 'mydatademo'
+MPROJ_NAME = 'mts/mtsdemo'
 COACH_NAME = 'Sample eCoach Course'
-COACH_URL = 'coach22'
+COACH_URL = 'coachdemo'
 COACH_EMAIL = 'ezzomich@msu.edu'
 
 from os.path import abspath, dirname, join
@@ -35,7 +35,7 @@ DOMAIN = 'localhost'
 DOMAIN_COACH = '/' + COACH_URL + '/'
 URL_SUB = MPROJ_NAME + '/'
 
-MYDATA = 'mydata22'
+MYDATA = 'mydatademo'
 
 DATABASE_ROUTERS = ['mytailoring.routers.UserRouter', 'mytailoring.routers.CommonRouter']
 
