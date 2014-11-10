@@ -1,11 +1,11 @@
 import socket
 host = socket.gethostname()
 
-if host == "analytics.itservices.msu.edu":
+if host == "ecoach.itservices.msu.edu":
     HOST = "DEVELOPMENT"
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
-elif host == "ecoach.itservices.msu.edu":
+elif host == "ecoach.msu.edu":
     HOST = "PRODUCTION"
 else:
     HOST = "LOCAL"
