@@ -1,3 +1,52 @@
+# Installation
+
+Install pip and virtualenv:
+
+    ```Shell
+    yum install python
+    yum install python-pip
+    yum install python-virtualenv
+    ```
+
+Checkout the main repository and mts project from git/svn:
+
+    ```Shell
+    cd /var/www
+    git clone git@github.com:mtezzo/ecoach_flat_phase2.git ecoach_webapps
+    cd ecoach_webapps
+    mkdir mts
+    cd mts
+    svn co https://subversion.assembla.com/svn/mtsdemo/trunk/mtsdemo
+    ```
+
+Setup a virtual environment called v1
+
+    ```Shell
+    cd /var/www/ecoach_webapps/
+    mkdir env
+    cd env
+    virtualenv --no-site-packages v1
+    . v1/bin/activate
+    pip install Django==1.3.1
+    pip install MySQL-python==1.2.3
+    pip install South==0.7.6
+    pip install numpy==1.8.1
+    pip install wsgiref==0.1.2
+    ```
+
+Setup the database
+
+    ```Shell
+    cd /var/www/ecoach_webapps/
+    python manage.py syncdb
+    python manage.py migrate
+    ```
+
+
+
+python manage.py syncdb
+python manage.py schemamigration mydatademo --initial
+python manage.py migrate
 
 
 Pipe freeze:
